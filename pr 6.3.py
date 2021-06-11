@@ -1,18 +1,18 @@
-
+# Многоуровневые нейронные сети
 import numpy as np
 import matplotlib.pyplot as plt
 import neurolab as nl
 
-
-min_val = -30
-max_val = 30
-num_points = 160 
+# создаем точку данных("y = 2x^(2)+8")
+min_val = -30 # min значения по графику x
+max_val = 30 # max значения по графику x
+num_points = 160 # колич. элиментов графика 
 x = np.linspace(min_val, max_val, num_points) 
-y = 2 * np.square(x) + 8 
+y = 2 * np.square(x) + 8 # уравнение 
 y /= np.linalg.norm(y)
 
 
-data = x.reshape(num_points, 1)
+data = x.reshape(num_points, 1) # меняет форму массива без изменения самих данных (reshape)
 labels = y.reshape(num_points, 1) 
 
 plt.figure()
